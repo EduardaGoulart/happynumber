@@ -6,9 +6,8 @@
 """
 
 def sum_of_square(number):
-    string = str(number)
-    digits = [int(char) ** 2 for char in string]
-    return sum(digits)
+    return sum(int(char) ** 2 for char in str(number))
+
 
 def happy(number):
     box = []
@@ -18,7 +17,7 @@ def happy(number):
         n = sum_of_square(n)
     return n == 1
 
+
 assert sum_of_square(130) == 10
 assert all(happy(n) for n in (1, 10, 100, 130, 97))
-assert not happy(4)
-assert not happy(5)
+assert not all(happy(n) for n in (2, 3, 4, 5, 6, 8, 9))
